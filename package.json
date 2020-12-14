@@ -1,0 +1,21 @@
+{
+  "name": "rotation",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Github action to get next team member in rotation",
+  "main": "lib/main.js",
+  "author": "Toby Daigle <toby.daigle@hotmail.ca>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:toby-daigle/rotation.git"
+  },
+  "scripts": {},
+  "keywords": [
+    "actions",
+    "github",
+    "rotation"
+  ],
+  "devDependencies": {},
+  "dependencies": {}
+}

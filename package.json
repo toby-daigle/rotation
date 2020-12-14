@@ -3,19 +3,26 @@
   "version": "1.0.0",
   "private": true,
   "description": "Github action to get next team member in rotation",
-  "main": "lib/main.js",
+  "main": "dist/main.js",
   "author": "Toby Daigle <toby.daigle@hotmail.ca>",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git@github.com:toby-daigle/rotation.git"
   },
-  "scripts": {},
+  "scripts": {
+    "build": "tsc"
+  },
   "keywords": [
     "actions",
     "github",
     "rotation"
   ],
-  "devDependencies": {},
-  "dependencies": {}
+  "dependencies": {
+    "@actions/core": "^1.2.6",
+    "@actions/github": "^4.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.1.3"
+  }
 }

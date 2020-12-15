@@ -9,23 +9,21 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.run = exports.splitUsernameList = void 0;
+exports.run = void 0;
 const github_1 = require("@actions/github");
 const core_1 = require("@actions/core");
 function splitUsernameList(text) {
     return text.split(/\s+/).filter((el) => el != '');
 }
-exports.splitUsernameList = splitUsernameList;
 function run() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
             const members = core_1.getInput('members', { required: true });
             const prNumber = github_1.context.issue.number;
             const usernames = splitUsernameList(members);
-            core_1.debug(`Pr Number: ${prNumber}`);
-            const nextAssigneeIndex = prNumber % usernames.length;
+            const memberCount = usernames.length;
+            const nextAssigneeIndex = prNumber % memberCount;
             const nextAssignee = usernames[nextAssigneeIndex];
-            core_1.debug(`Next assignee: ${usernames}`);
             core_1.setOutput('next', nextAssignee);
         }
         catch (e) {

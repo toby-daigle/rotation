@@ -1,7 +1,7 @@
 import { context } from '@actions/github';
-import { debug, error, getInput, setFailed, setOutput } from '@actions/core'
+import { error, getInput, setFailed, setOutput } from '@actions/core'
 
-export function splitUsernameList(text: string): string[] {
+function splitUsernameList(text: string): string[] {
     return text.split(/\s+/).filter((el) => el != '');
 }
 
@@ -11,12 +11,10 @@ export async function run(): Promise<void> {
         const prNumber = context.issue.number;
 
         const usernames = splitUsernameList(members);
+        const memberCount = usernames.length;
 
-        debug(`Pr Number: ${prNumber}`);
-
-        const nextAssigneeIndex = prNumber % usernames.length;
+        const nextAssigneeIndex = prNumber % memberCount;
         const nextAssignee = usernames[nextAssigneeIndex];
-        debug(`Next assignee: ${usernames}`);
 
         setOutput('next', nextAssignee);
     } catch (e) {

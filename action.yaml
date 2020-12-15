@@ -1,5 +1,5 @@
 name: Team Rotation
-description: Return a team member based on PR number in rotation
+description: Get next team member in rotation based on issue (PR) number
 author: Toby Daigle
 inputs:
   members:

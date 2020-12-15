@@ -1,8 +1,8 @@
 {
   "name": "rotation",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "private": true,
-  "description": "Github action to get next team member in rotation",
+  "description": "Github action to get next team member in rotation based on issue (PR) number",
   "main": "dist/main.js",
   "author": "Toby Daigle <toby.daigle@hotmail.ca>",
   "license": "MIT",
@@ -13,11 +13,7 @@
   "scripts": {
     "build": "tsc"
   },
-  "keywords": [
-    "actions",
-    "github",
-    "rotation"
-  ],
+  "keywords": ["actions", "github", "rotation", "team"],
   "dependencies": {
     "@actions/core": "^1.2.6",
     "@actions/github": "^4.0.0"

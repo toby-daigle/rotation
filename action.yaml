@@ -5,6 +5,9 @@ inputs:
   members:
     description: Team members, separated by a space.
     required: true
+outputs:
+  next:
+    description: Next member in rotation
 runs:
   using: node12
   main: dist/main.js

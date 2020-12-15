@@ -1,0 +1,10 @@
+name: Team Rotation
+description: Return a team member based on PR number in rotation
+author: Toby Daigle
+inputs:
+  members:
+    description: Team members, separated by a space.
+    required: true
+runs:
+  using: node12
+  main: dist/main.js
